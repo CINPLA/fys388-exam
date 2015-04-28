@@ -49,54 +49,77 @@
 
 \end{frame}
 
-
-
 \begin{frame}
-\frametitle{The general idea behind the integrate and fire model is a simple RC circuit that is shortcircuted once a threshold is reached}
-
+\frametitle{We do not need all information in the action potential for a neuron in a network and create an approximation of the action potential}
 \begin{figure}
-\includegraphics<1>[width = 0.5\textwidth]{rcA.png}
-\includegraphics<2>[width = 0.5\textwidth]{rcAI.png}
-\includegraphics<3>[width = 0.5\textwidth]{rcARm.png}
-\includegraphics<4>[width = 0.5\textwidth]{rcAEm.png}
-\includegraphics<5>[width = 0.5\textwidth]{rcACm.png}
-\includegraphics<6>[width = 0.5\textwidth]{rcAs.png}
-\includegraphics<7>[width = 0.5\textwidth]{rcB.png}
-\includegraphics<8>[width = 0.5\textwidth]{rcBs.png}
+\includegraphics<1>[width = \textwidth]{hh.png}
+\includegraphics<2>[width = \textwidth]{fi.png}
 \end{figure}
-
 \end{frame}
-
 
 
 \begin{frame}
-\frametitle{The integrate and fire neuron model is one of the simplest neuron models that exist and are therefore good  for modeling network}
+\frametitle{The integrate and fire neuron is much faster to evaluate than the Hodgkin-Huxley neuron}
 
-\begin{itemize}[<+->]
-\item Each neuron is fast to evaluate
-\item For a network the precision of a single neuron is not important
-\end{itemize}
+\begin{block}{Hodgkin-Huxley}
+\begin{align*}
+\onslide<2->  {C\frac{dV}{dt} &= I_{inj} - \bar{g}_{Na}m^3h(V-V_{Na}) -\bar{g}_Kn^4(V-V_K) - g_L (V-V_L)}\\
+ \onslide<3->  {\frac{dn}{dt} &= \alpha_n(V) (1-n) - \beta_n(V)n \quad}
+ \onslide<4-> {\frac{dm}{dt} = \alpha_m(V) (1-m) - \beta_m(V)m}\\
+\onslide<5->  {\frac{dh}{dt} &= \alpha_h(V) (1-h) - \beta_h(V)h \quad}
+\onslide<6->  {\alpha_n(V) = \frac{0.01(V+55)}{1-\exp[-(V+55)/10]}} \\
+\onslide<7->  {\beta_n(V) &= 1.125\exp[-(V+65)/80] \quad}
+\onslide<8->  {\alpha_m(V)  = \frac{0.1(V+40)}{1-\exp[-(V+40)/10]}} \\
+\onslide<9->  {\beta_m(V) &= 4\exp[-(V+65)/18] \quad}
+\onslide<10->  {\alpha_h(V) = 0.07\exp[-(V+65)/20]} \\
+\onslide<11->  {\beta_n(V) &= \frac{1}{1+\exp[-(V+35)/10]}}
+\end{align*}
+\end{block}
 
 \end{frame}
+
+
+\begin{frame}
+\frametitle{The integrate and fire neuron is much faster to evaluate than the Hodgkin-Huxley neuron}
+\begin{block}{Integrate and fire}
+\pause
+\begin{equation*}
+C_m \frac{dV(t)}{dt} = - \frac{V(t) - E_m}{R_m} + I
+\end{equation*}
+\end{block}
+
+\end{frame}
+
+
+% \begin{frame}
+% \frametitle{The integrate and fire model is modeled as a simple RC circuit that is shortcircuted once a threshold is reached}
+
+% \begin{figure}
+% \includegraphics<1>[width = 0.5\textwidth]{rcA.png}
+% \includegraphics<2>[width = 0.5\textwidth]{rcAI.png}
+% \includegraphics<3>[width = 0.5\textwidth]{rcARm.png}
+% \includegraphics<4>[width = 0.5\textwidth]{rcAEm.png}
+% \includegraphics<5>[width = 0.5\textwidth]{rcACm.png}
+% \includegraphics<6>[width = 0.5\textwidth]{rcAs.png}
+% % \includegraphics<7>[width = 0.5\textwidth]{rcB.png}
+% % \includegraphics<8>[width = 0.5\textwidth]{rcBs.png}
+% \end{figure}
+% \end{frame}
+
 
 \begin{frame}
 \frametitle{Neuronify is a new tool for creating neural networks}
+\begin{figure}
+\includegraphics[height = 0.8\textheight]{logo.png}
+\end{figure}
 \end{frame}
+
 
 \begin{frame}
-\frametitle{Exercises: create a network that gives a signal when a lightsource is moving right to left, but not the left to right}
-
-\begin{block}{Exercise 1}
-Start with a linear array of light-sensitive neurons that can be connected with each other through lateral inhibition, and which converge onto one output neuron, create a network that allows the output neuron to selectively respond to a spot of light that moves from left to right but not a spot of light that moves from right to left. 
-\end{block}
-
-\onslide <2> {\begin{block}{Clue} Use lateral inhibitory connections in one direction only.\end{block}}
+\frametitle{Exercises}
+\begin{figure}
+\includegraphics[width = \textwidth]{exercises.png}
+\end{figure}
 \end{frame}
-
-\begin{frame}
-\frametitle{Exercises: create a network that }
-
-\end{frame}
-
 
 \end{document}
