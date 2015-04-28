@@ -50,10 +50,12 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{We do not need all information in the action potential for a neuron in a network and create an approximation of the action potential}
+\frametitle{We do not need all information in the action potential for a neuron in a network and can create an approximation}
 \begin{figure}
 \includegraphics<1>[width = \textwidth]{hh.png}
-\includegraphics<2>[width = \textwidth]{fi.png}
+\includegraphics<2>[width = 1\textwidth]{fi.png}
+\includegraphics<3>[width = 1\textwidth]{fis.png}
+\includegraphics<4>[width = 1\textwidth]{all.png}
 \end{figure}
 \end{frame}
 
@@ -62,33 +64,31 @@
 \frametitle{The integrate and fire neuron is much faster to evaluate than the Hodgkin-Huxley neuron}
 
 \begin{block}{Hodgkin-Huxley}
+\pause
+\tiny
 \begin{align*}
-\onslide<2->  {C\frac{dV}{dt} &= I_{inj} - \bar{g}_{Na}m^3h(V-V_{Na}) -\bar{g}_Kn^4(V-V_K) - g_L (V-V_L)}\\
- \onslide<3->  {\frac{dn}{dt} &= \alpha_n(V) (1-n) - \beta_n(V)n \quad}
- \onslide<4-> {\frac{dm}{dt} = \alpha_m(V) (1-m) - \beta_m(V)m}\\
-\onslide<5->  {\frac{dh}{dt} &= \alpha_h(V) (1-h) - \beta_h(V)h \quad}
-\onslide<6->  {\alpha_n(V) = \frac{0.01(V+55)}{1-\exp[-(V+55)/10]}} \\
-\onslide<7->  {\beta_n(V) &= 1.125\exp[-(V+65)/80] \quad}
-\onslide<8->  {\alpha_m(V)  = \frac{0.1(V+40)}{1-\exp[-(V+40)/10]}} \\
-\onslide<9->  {\beta_m(V) &= 4\exp[-(V+65)/18] \quad}
-\onslide<10->  {\alpha_h(V) = 0.07\exp[-(V+65)/20]} \\
-\onslide<11->  {\beta_n(V) &= \frac{1}{1+\exp[-(V+35)/10]}}
+ C\frac{dV}{dt} &= I_{inj} - \bar{g}_{Na}m^3h(V-V_{Na}) -\bar{g}_Kn^4(V-V_K) - g_L (V-V_L)\\
+ \frac{dn}{dt} &= \alpha_n(V) (1-n) - \beta_n(V)n \quad
+ \frac{dm}{dt} = \alpha_m(V) (1-m) - \beta_m(V)m\\
+ \frac{dh}{dt} &= \alpha_h(V) (1-h) - \beta_h(V)h \quad
+ \alpha_n(V) = \frac{0.01(V+55)}{1-\exp[-(V+55)/10]} \\
+ \beta_n(V) &= 1.125\exp[-(V+65)/80] \quad
+ \alpha_m(V)  = \frac{0.1(V+40)}{1-\exp[-(V+40)/10]} \\
+ \beta_m(V) &= 4\exp[-(V+65)/18] \quad
+ \alpha_h(V) = 0.07\exp[-(V+65)/20] \\
+ \beta_n(V) &= \frac{1}{1+\exp[-(V+35)/10]}
 \end{align*}
 \end{block}
-
-\end{frame}
-
-
-\begin{frame}
-\frametitle{The integrate and fire neuron is much faster to evaluate than the Hodgkin-Huxley neuron}
+\pause
 \begin{block}{Integrate and fire}
 \pause
+\tiny
 \begin{equation*}
 C_m \frac{dV(t)}{dt} = - \frac{V(t) - E_m}{R_m} + I
 \end{equation*}
 \end{block}
-
 \end{frame}
+
 
 
 % \begin{frame}
