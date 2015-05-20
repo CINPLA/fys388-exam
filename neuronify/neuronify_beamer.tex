@@ -17,7 +17,7 @@
 \title{Neuronify: a new tool for creating simple neural networks}
 \author{Simen Tennøe,\newline Svenn-Arne Dragly,\newline Andreas V. Solbr\aa,\newline Milad H. Mobarhan}
 
-%\usetheme{cinpla3}
+\usetheme{cinpla3}
 
 
 \begin{document}
@@ -121,14 +121,65 @@ C_m \frac{dV(t)}{dt} = - \frac{V(t) - E_m}{R_m} + I
 % Adaptation
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
+\begin{frame}
+	\frametitle{Adaptive Firing Rate}
+	\begin{figure}
+		\includegraphics[width = 0.5\textwidth]{figures/adaptation.png}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Adaptive Firing Rate}
+	This can be modeled by a reverse current
+	$$
+ I_{\mathrm{adapt}} =  g_{\mathrm{adapt}}(V - E_m)
+$$
+where the conductance is incremented by a step $\Delta g$ on each action potential, and then decays.
+$$
+\frac{\mathrm{d}}{\mathrm{d}t} g_{\mathrm{adapt}}=-\frac{g_{\mathrm{adapt}}}{\tau_{\mathrm{adapt}}}.
+$$
+\end{frame}
+
+\begin{frame}
+	\frametitle{Adaptive Firing Rate}
+	\begin{figure}
+		\includegraphics[width = 0.5\textwidth]{figures/adaptative.png}
+	\end{figure}
+		\begin{figure}
+	\includegraphics[width =0.5\textwidth]{figures/adaptative_inhibitory.png}
+		\end{figure}
+\end{frame}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % Poisson Generators.
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
+\begin{frame}
+	\frametitle{Spike generators}
+	Neurons exhibit irregular firing patterns. In the Stein model this is achieved by letting the neuron receive random inhibitory and excitatory spikes, which follow a Poisson process, 
+	  $$
+	   Pr(X=n) = f(n) =  \frac{\lambda^n e^{-\lambda }}{n!}
+	  $$
+\end{frame}
+
+\begin{frame}
+	\frametitle{Spike generators - Implementation}
+	At each time step we draw a random number $x$. If $x<r\Delta t$, the generator fires. Otherwise it does not. 
+\end{frame}
+
+\begin{frame}
+	\frametitle{Spike generators - Neuronify}
+	\begin{figure}
+		\includegraphics[width = 0.5\textwidth]{figures/two_neurons_noise.png}
+	\end{figure}
+\end{frame}
+
+
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % Receptive Field
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
 
 \begin{frame}
  \frametitle{Receptive Field}
