@@ -23,6 +23,7 @@
 \begin{document}
 \maketitle
 
+\if false
 \begin{frame}
   \frametitle{In this lecture we will introduce Neuronify, a new tool for creating neural networks}
 
@@ -48,6 +49,8 @@
   \end{tikzpicture}
 
 \end{frame}
+
+\fi
 
 \begin{frame}
 \frametitle{We do not need all information in the action potential for a neuron in a network and can create an approximation}
@@ -142,12 +145,16 @@ $$
 
 \begin{frame}
 	\frametitle{Adaptive Firing Rate}
-	\begin{figure}
-		\includegraphics[width = 0.3\textwidth]{figures/adaptive.png}
-	\end{figure}
-		\begin{figure}
-	\includegraphics[width =0.3\textwidth]{figures/adaptive_inhibitory.png}
-		\end{figure}
+
+  \begin{tikzpicture}[remember picture,overlay]  
+    \node [xshift=-3cm,yshift=0cm] at (current page.center)
+          {\includegraphics[width = 0.4\paperwidth ]{figures/adaptive.png}};
+
+    \node [xshift=3cm,yshift=0cm] at (current page.center)
+          {\includegraphics[width = 0.4\paperwidth ]{figures/adaptive_inhibitory.png}};
+
+  \end{tikzpicture}
+
 \end{frame}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
