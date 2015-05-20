@@ -118,33 +118,62 @@ C_m \frac{dV(t)}{dt} = - \frac{V(t) - E_m}{R_m} + I
  \end{frame}
 
 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Receptive Field
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 \begin{frame}
-\frametitle{Neuronify is a new tool for creating neural networks}
+ \frametitle{Receptive Field}
+
+
+\begin{equation}
+r(t) = r_0 + \displaystyle \int \int D(\mathbf{r},\tau) s(\mathbf{r},t-\tau) d\tau d\mathbf{r}
+\end{equation}
 
 
 \begin{figure}
-\includegraphics[height = 0.6\textheight]{figures/logo.png}
-\end{figure}
+ \includegraphics[width = 0.5\textwidth]{figures/gabor.png}
+ \end{figure}
 
-\begin{alert}{Download:}\\
-  \scriptsize
-  \href{http://cinpla.org/neuronify/}{http://cinpla.org/neuronify/}
-\end{alert}
 \end{frame}
 
 
 \begin{frame}
-\frametitle{Exercises}
-
+ \frametitle{Receptive Field}
 
 \begin{figure}
-\includegraphics[width = \textwidth]{figures/exercises.png}
-\end{figure}
-\begin{alert}{Exercises:}\\
-  \scriptsize
-  \href{http://cinpla.org/neuronify/}{http://cinpla.org/neuronify/}\\
-\end{alert}
+ \includegraphics[width = 0.5\textwidth]{figures/recRFs.png}
+ \end{figure}
+
 \end{frame}
+
+%
+%\begin{frame}
+%\frametitle{Neuronify is a new tool for creating neural networks}
+%
+%
+%\begin{figure}
+%\includegraphics[height = 0.6\textheight]{figures/logo.png}
+%\end{figure}
+%
+%\begin{alert}{Download:}\\
+%  \scriptsize
+%  \href{http://cinpla.org/neuronify/}{http://cinpla.org/neuronify/}
+%\end{alert}
+%\end{frame}
+%
+%
+%\begin{frame}
+%\frametitle{Exercises}
+%
+%
+%\begin{figure}
+%\includegraphics[width = \textwidth]{figures/exercises.png}
+%\end{figure}
+%\begin{alert}{Exercises:}\\
+%  \scriptsize
+%  \href{http://cinpla.org/neuronify/}{http://cinpla.org/neuronify/}\\
+%\end{alert}
+%\end{frame}
 
 \end{document}
